@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background-color: rgba(39, 87, 126, 0.8);
+}
+
+
+
+section {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px auto;
+}
+
+section ul { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+section ul li {
+    color: rgb(24, 84, 112);
+    border: 2px solid #000;
+    list-style: none;
+    background: #bdaeae;
+    padding: 12px 60px;
+    margin: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: x-large;
+    font-weight: bold;
+    transition: all 200ms ease;
+}
+
+
+
+.product .itemBox:hover {
+    background-color: rgb(16, 52, 73);
+    
+}
+
+/* rgb(39, 100, 136) */
+
+h1 {
+    color: #000000;
+    font-size: 60px;
+    padding: 10px;
+    -webkit-text-stroke: 1px #a5a5a5;
+    color: solid;
+}
+
+section ul li.active {
+    background: #03a0f4;
+    color: #fff;
+}
+
+.product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: all 200ms ease;
+}
+
+.product .itemBox {
+   position: relative;
+   width: 300px;
+   height: 300px;
+   margin: 5px;
+   display: block;
+   cursor: pointer;
+}
+
+.product .itemBox.hide {
+    display: none;
+}
+
+.product .itemBox img{
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+/* Ventanas emergentes */
+
+.preview-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: #054a6e;
+    max-width: 700px;
+    height: 500px;
+    width: 100%;
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    border: 10px solid #1a3847 ;
+    border-radius: 15px;
+    padding: 0 5px 5px 5px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    font-size: large;
+    display: grid;
+    place-items: center;
+    transition: all 0.5s ease;
+}
+
+.preview-box.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    transition: all  0.5s ease;
+}
+
+.shadow.show{
+    display: block;
+}
+
+.preview-box .details {
+    display: flex;
+    align-items: center;
+    padding: 13px 15px 13px 30px;
+    justify-content: center;
+}
+
+.title {
+   position: relative;
+   top: 50px;
+   display: grid;
+   
+}
+
+
+.preview-box .image-box {
+    display: flex;
+    width: 100%;
+}
+
+.image-box img{
+    width: 100%;
+    border-radius: 7px;
+}
+
+.Ver{
+    padding: 10px;
+    
+}
+
+
+
+
+/* iconos de las tegnologias */ 
+
+.projects__buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+  }
+
+
+  /* Sombras */
+
+  .shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    display: none;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+
+@media only screen and (max-width:393px) {
+    .preview-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #054a6e;
+        max-width: 700px;
+        height: 500px;
+        width: 100%;
+        border: 10px solid #1a3847 ;
+        border-radius: 15px;
+        padding: 0 5px 5px 5px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4);
+        font-weight: bold;
+        font-size: large;
+        display: grid;
+        place-items: center;
+    }
+    
+    .preview-box .details {
+        display: flex;
+        align-items: center;
+        padding: 13px 15px 13px 25px;
+        justify-content: center;
+    }
+    
+    .title {
+       position: relative;
+       top: 50px;
+       left: -20px;
+       display: grid;
+       
+    }
+    
+    
+    .preview-box .image-box {
+        display: flex;
+        width: 100%;
+    }
+    
+    .image-box img{
+        width: 100%;
+        border-radius: 7px;
+    }
+    
+    .Ver{
+        padding: 10px;
+        
+    }
+    
+    
+    /* iconos de las tegnologias */ 
+    
+    .projects__buttons {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+      }
+}

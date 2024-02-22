@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/cream_crazy_icon-icons.com_74936.ico" type="image/x-icon">
+    <title>Projects && Test</title>
+    <link rel="stylesheet" type="text/css" href="Style.css">
+</head>
+
+<body>
+
+    <section>
+        <h1>More Projects</h1>
+        <ul>
+            <li class="list active" data-filter="all">All</li>
+            <li class="list" data-filter="test">Test</li>
+            <li class="list" data-filter="ani">Animation</li>
+            <li class="list" data-filter="lan">Landing</li>
+            <li class="list" data-filter="pro">Projects</li>
+        </ul>
+        <div class="product">
+            <a class="itemBox" data-item="pro" nombre="Bento-Page" href="#"><img loading="lazy"
+                    src="./images/Bento.png" alt="" href="#"></a>
+            <a class="itemBox" data-item="lan" nombre="Blog" href="#"><img loading="lazy"
+                    src="./images/Blog.png"  alt=""></a>
+            <a class="itemBox" data-item="pro" nombre="Pelicula" href="#"><img loading="lazy"
+                    src="./images/Catologo de peliculas.png" alt=""></a>
+            <a class="itemBox" data-item="test" nombre="Galeria" href="#"><img loading="lazy"
+                    src="./images/GaleriaDeFotos.png" alt=""></a>
+            <a class="itemBox" data-item="pro" nombre="Ventas" href="#"><img loading="lazy"
+                    src="./images/Sales.png" alt=""></a>
+            <a class="itemBox" data-item="pro" nombre="Mogji" href="#"><img loading="lazy"
+                    src="./images/MOGJI.jpg" alt=""></a>
+            <a class="itemBox" data-item="pro" nombre="Calculadora" href="#"><img loading="lazy"
+                    src="./images/Captura de pantalla 2024-02-07 034210.png" alt=""></a>
+
+            <!--Cuando se tenga el otro contenido agregar aqui mismo dentro del div-->
+
+        </div>
+    </section>
+
+    <div class="preview-box">
+        <div class="details">
+            <span class="title">Image Category: <p>Not defined</p>
+                <br>
+                <p class="Descripcion">Este es un proyecto administrativo que administra todo tipo de tareas
+
+                    <br> En este rpoyecto podremos administrar muchas cosas fasdfbhnoshnfosofhsifhisdwoifosifiosdhf
+                </p>
+                <br>
+                <div class="projects__buttons">
+                    <img src="./images/cream_crazy_icon-icons.com_74936.ico" alt="">
+                </div>
+                <br>
+                <button class="Ver">Visitar El Proyecto</button>
+            </span>
+
+        </div>
+        <div class="image-box">
+            <img src="" alt="">
+
+        </div>
+    </div>
+    <div class="shadow"></div>
+
+    <script>
+        let list = document.querySelectorAll('.list');
+        let itemBox = document.querySelectorAll('.itemBox');
+
+        for (let i = 0; i < list.length; i++) {
+            list[i].addEventListener('click', function () {
+                for (let j = 0; j < list.length; j++) {
+                    list[j].classList.remove('active');
+
+                }
+                this.classList.add('active');
+
+
+                let dataFilter = this.getAttribute('data-filter');
+
+                for (let k = 0; k < itemBox.length; k++) {
+                    itemBox[k].classList.remove('active');
+                    itemBox[k].classList.add('hide');
+
+
+                    if (itemBox[k].getAttribute('data-item') === dataFilter || dataFilter === "all") {
+                        itemBox[k].classList.remove('hide');
+                        itemBox[k].classList.add('active');
+
+                    }
+                }
+
+
+            })
+           
+        }
+        
+        
+        for (let index = 0; index < itemBox.length; index++) {
+        itemBox[index].setAttribute("onclick", "preview(this)");
+
+    }
+        // LightBox
+
+        const previewBox = document.querySelector(".preview-box"),
+         categoryName = previewBox.querySelector(".title p"),
+         shadow = document.querySelector(".shadow");
+
+
+           
+
+        function preview(element) {
+           
+            previewBox.classList.add("show");
+            let selectedName = element.getAttribute("nombre");
+            categoryName.textContent = selectedName;
+            shadow.classList.add("show");
+
+        }
+
+        window.onclick = function(e){
+            if (e.target == previewBox || e.target == shadow) {
+                previewBox.classList.remove("show");
+                shadow.classList.remove("show");
+
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
