@@ -21,20 +21,22 @@
             <li class="list" data-filter="pro">Projects</li>
         </ul>
         <div class="product">
-            <a class="itemBox" data-item="pro" nombre="Bento-Page" href="#"><img loading="lazy"
-                    src="./images/Bento.png" alt="" href="#"></a>
-            <a class="itemBox" data-item="lan" nombre="Blog" href="#"><img loading="lazy"
-                    src="./images/Blog.png"  alt=""></a>
+            <a class="itemBox" data-item="pro" nombre="Bento-Page" href="#"><img loading="lazy" src="./images/Bento.png"
+                    alt="" href="#"></a>
+            <a class="itemBox" data-item="lan" nombre="Blog" href="#"><img loading="lazy" src="./images/Blog.png"
+                    alt=""></a>
             <a class="itemBox" data-item="pro" nombre="Pelicula" href="#"><img loading="lazy"
                     src="./images/Catologo de peliculas.png" alt=""></a>
             <a class="itemBox" data-item="test" nombre="Galeria" href="#"><img loading="lazy"
                     src="./images/GaleriaDeFotos.png" alt=""></a>
-            <a class="itemBox" data-item="pro" nombre="Ventas" href="#"><img loading="lazy"
-                    src="./images/Sales.png" alt=""></a>
-            <a class="itemBox" data-item="pro" nombre="Mogji" href="#"><img loading="lazy"
-                    src="./images/MOGJI.jpg" alt=""></a>
+            <a class="itemBox" data-item="pro" nombre="Ventas" href="#"><img loading="lazy" src="./images/Sales.png"
+                    alt=""></a>
+            <a class="itemBox" data-item="pro" nombre="Mogji" href="#"><img loading="lazy" src="./images/MOGJI.jpg"
+                    alt=""></a>
             <a class="itemBox" data-item="pro" nombre="Calculadora" href="#"><img loading="lazy"
                     src="./images/Captura de pantalla 2024-02-07 034210.png" alt=""></a>
+            <a class="itemBox" data-item="pro" nombre="Calculadora" href="#"><img loading="lazy"
+                    src="./images/Drag-Drop.png" alt=""></a>
 
             <!--Cuando se tenga el otro contenido agregar aqui mismo dentro del div-->
 
@@ -94,33 +96,34 @@
 
 
             })
-           
-        }
-        
-        
-        for (let index = 0; index < itemBox.length; index++) {
-        itemBox[index].setAttribute("onclick", "preview(this)");
 
-    }
+        }
+
+
+        for (let index = 0; index < itemBox.length; index++) {
+            itemBox[index].setAttribute("onclick", "preview(this)");
+
+        }
         // LightBox
 
         const previewBox = document.querySelector(".preview-box"),
-         categoryName = previewBox.querySelector(".title p"),
-         shadow = document.querySelector(".shadow");
+            categoryName = previewBox.querySelector(".title p"),
+            shadow = document.querySelector(".shadow");
 
 
-           
+
 
         function preview(element) {
-           
+
             previewBox.classList.add("show");
             let selectedName = element.getAttribute("nombre");
             categoryName.textContent = selectedName;
+            let Camino = element.getAttribute("data-item").href;
             shadow.classList.add("show");
 
         }
 
-        window.onclick = function(e){
+        window.onclick = function (e) {
             if (e.target == previewBox || e.target == shadow) {
                 previewBox.classList.remove("show");
                 shadow.classList.remove("show");
