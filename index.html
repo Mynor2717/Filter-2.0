@@ -21,8 +21,8 @@
             <li class="list" data-filter="pro">Projects</li>
         </ul>
         <div class="product">
-            <a class="itemBox" data-item="pro" nombre="Bento-Page"><img loading="lazy" src="./images/Bento.png"
-                    alt="sdfsd" href="#My"></a>
+            <div><a class="itemBox" data-item="pro" nombre="Bento-Page"><img loading="lazy" src="./images/Bento.png"
+                    alt="sdfsd" href="#My"></a></div>
             <a class="itemBox" data-item="lan" nombre="Blog" href="#asdasdadas"><img loading="lazy" src="./images/Blog.png"
                     alt=""></a>
             <a class="itemBox" data-item="pro" nombre="Pelicula" href="#"><img loading="lazy"
@@ -109,7 +109,7 @@
 
         const previewBox = document.querySelector(".preview-box"),
             categoryName = previewBox.querySelector(".title p"),
-            Links = previewBox.querySelector(".projects__buttons img"),
+            Links = previewBox.querySelector(".title a"),
             shadow = document.querySelector(".shadow");
 
 
@@ -119,7 +119,7 @@
 
             previewBox.classList.add("show");
             let selectedName = element.getAttribute("nombre");
-            let Camino = element.getAttribute ("alt");
+            let Camino = element.getAttribute ("href");
             Links.textContent = Camino;
             categoryName.textContent = selectedName;
             // let Camino = element.getAttribute("data-item").href;
