@@ -21,8 +21,8 @@
             <li class="list" data-filter="pro">Projects</li>
         </ul>
         <div class="product">
-            <a class="itemBox" data-item="pro" nombre="Bento-Page" href="#"><img loading="lazy" src="./images/Bento.png"
-                    alt="" href="#"></a>
+            <a class="itemBox" data-item="pro" nombre="Bento-Page"><img loading="lazy" src="./images/Bento.png"
+                    alt="sdfsd" href="#My"></a>
             <a class="itemBox" data-item="lan" nombre="Blog" href="#asdasdadas"><img loading="lazy" src="./images/Blog.png"
                     alt=""></a>
             <a class="itemBox" data-item="pro" nombre="Pelicula" href="#"><img loading="lazy"
@@ -45,18 +45,19 @@
 
     <div class="preview-box">
         <div class="details">
-            <span class="title">Image Category: <p>Not defined</p>
+            <span class="title">Image Category: <p>Not defined</p> 
+                <a href="H"></a>
                 <br>
                 <p class="Descripcion">Este es un proyecto administrativo que administra todo tipo de tareas
-
+                 
                     <br> En este rpoyecto podremos administrar muchas cosas fasdfbhnoshnfosofhsifhisdwoifosifiosdhf
+                    
                 </p>
                 <br>
                 <div class="projects__buttons">
-                    <img src="./images/cream_crazy_icon-icons.com_74936.ico" alt="">
+                    <img src="./images/cream_crazy_icon-icons.com_74936.ico" alt="adas">
                 </div>
                 <br>
-                <button class="Ver"><a class="lik" href="Linksdfs">Visitar El Proyecto</a></button>
             </span>
 
         </div>
@@ -108,6 +109,7 @@
 
         const previewBox = document.querySelector(".preview-box"),
             categoryName = previewBox.querySelector(".title p"),
+            Links = document.querySelector(".itemBox img"),
             shadow = document.querySelector(".shadow");
 
 
@@ -117,6 +119,8 @@
 
             previewBox.classList.add("show");
             let selectedName = element.getAttribute("nombre");
+            let Camino = element.getAttribute ("alt");
+            Links.textContent = Camino;
             categoryName.textContent = selectedName;
             // let Camino = element.getAttribute("data-item").href;
             shadow.classList.add("show");
@@ -130,6 +134,9 @@
 
             }
         }
+
+        // let link = document.getAttribute("itemBox");
+        // itemBox.href="https://mynorprojects.com/MoreGrid/";
 
 
 
